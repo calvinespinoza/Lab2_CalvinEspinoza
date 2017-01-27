@@ -65,6 +65,45 @@ double E2_grados(double ladoA, double ladoB, double ladoC)
 }
 
 
+void Ejercicio3(){
+	 		int tam = 0;
+                        do
+                        {
+                                cout << "Ingrese el tamaño del arreglo mayor a 5: ";
+                                cin >> tam;
+
+                        } while (tam < 5);
+
+                        int array[tam];
+                        int num;
+                        for(int i = 0; i <= tam - 1; i++){
+
+                                cout << "Ingrese posicion " << i + 1 << ": ";
+                                cin >> num;
+
+                                array[i] = num;
+                        }
+                        int max = 0, min = 0;
+                        int temp;
+			for(int k = 0; k <= tam - 1; k++){
+                                for (int j = k + 1; j < tam - 1; j++){
+                                        if (array[k] > array[j]){
+                                                temp = array[k];
+                                                array[k] = array[j];
+                                                array[j] = temp;
+                                        }
+                                }
+                        }
+                        for(int l = 0;l < tam -1; l++){
+                                cout << array[l];
+                        }
+                        min = array[0];
+                        max = array[tam - 1];
+                        cout << "El valor minimo es: " << min << endl;
+                        cout << "El valor maximo es: " << max << endl;
+                        cout << "La diferencia entre estos valores es de: " << max - min << endl;
+
+}
 
 int menu()
 {
@@ -74,9 +113,11 @@ int menu()
 
         switch(menu)
         {
-                case 1:
+                case 1: {
                         Ejercicio1();
-		case 2:
+			break;
+			}
+		case 2:{
 			double ladoA, ladoB, ladoC;
 			double angA1 = 0, angB1 = 0, angC1 = 0;
 			double angA2 = 0, angB2 = 0, angC2 = 0;
@@ -113,7 +154,13 @@ int menu()
                                         << angB1 << "\nAngulo C: " << angC1 << endl;
 
 			}
-		
+			break;
+			}
+		case 3:
+			{
+				Ejercicio3();
+				break;
+			}
         }
         return 0;
 }
