@@ -86,7 +86,7 @@ void Ejercicio3(){
                         int max = 0, min = 0;
                         int temp;
 			for(int k = 0; k <= tam - 1; k++){
-                                for (int j = k + 1; j < tam - 1; j++){
+                                for (int j = k + 1; j <= tam - 1; j++){
                                         if (array[k] > array[j]){
                                                 temp = array[k];
                                                 array[k] = array[j];
